@@ -1,4 +1,4 @@
-## Sample Application of Elastic Service
+## Sample Application of Scala Webtool
 
 ### Database Preperation
 
@@ -26,13 +26,13 @@ Then you have done all you have to do for usig database.
 
 ### To run
 
-Copy framework\target\scala-2.11\elasticparam_2.11-0.1.1.jar to sample-play-dev\lib
+Copy scala-webtool\target\scala-2.11\scala-webtool_2.11-0.1.1.jar to sample-play-dev\lib
 
 ```
-$ cd sample-play-dev
+$ cd scala-webtool-sample
 $ activator
-[sample-play-dev] $ compile
-[sample-play-dev] $ ~ run
+[scala-webtool-sample] $ compile
+[scala-webtool-sample] $ ~ run
 ```
 
 Then you are ready to test this sample application.
