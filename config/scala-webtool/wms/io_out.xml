@@ -1,0 +1,11 @@
+<update>
+insert into WMS_IO (POSITION, ITEM, WORKER, MODE, CREATED) 
+values (
+	#{POSITION},
+	#{ITEM},
+	#{WORKER},
+	'OUT',
+	CURRENT_TIMESTAMP()
+)
+</update>
+

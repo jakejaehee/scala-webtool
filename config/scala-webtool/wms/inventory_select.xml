@@ -1,0 +1,4 @@
+<select>
+select * from WMS_INVENTORY
+where ITEM = #{ITEM}
+</select>

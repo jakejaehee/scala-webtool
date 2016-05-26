@@ -1,0 +1,14 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Map static resources from the /public folder to the /assets URL path
+GET    /assets/*file   controllers.Assets.versioned(path="/public", file: Asset)
+
+GET    /elastic        webtool.web.play.controllers.DefaultApplication.index
+
+POST   /elastic        webtool.web.play.controllers.DefaultApplication.index
+
+GET    /waso           sample.play.controllers.AkkaApplication.index
+
+POST   /waso           sample.play.controllers.AkkaApplication.index

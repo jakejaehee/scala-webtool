@@ -1,0 +1,8 @@
+<update>
+insert into WMS_INVENTORY (POSITION, ITEM, UPDATED)
+values (
+	#{POSITION},
+	#{ITEM},
+	CURRENT_TIMESTAMP()
+)
+</update>

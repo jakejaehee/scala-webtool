@@ -1,0 +1,8 @@
+<update>
+update WMS_INVENTORY (POSITION, ITEM, UPDATED)
+set
+	POSITION = #{POSITION},
+	ITEM = #{ITEM},
+	CURRENT_TIMESTAMP()
+where ITEM = #{ITEM}
+</update>

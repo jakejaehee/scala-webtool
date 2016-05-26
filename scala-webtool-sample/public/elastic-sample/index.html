@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Elastic Service v0.1 Examples</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		
+<script src="../html5/jq/jquery-1.9.1.min.js"></script>
+<script src="../html5/elastic-util-1.5.js"></script>
+
+</head>
+<BODY>
+	<div data-role="page">
+		<div data-role="header">
+			<h2><script>document.write(elastic_project_name())</script> Examples</h2>
+			<a href="../index.html" data-theme="a" data-ajax="false">Home</a>
+		</div>
+		<br>
+		<div data-role="content">
+			<div id="built-in" data-inline="true">
+				<font size="4">Prepare test table t_emp</font>
+				<OL>
+					<LI><a charset="UTF-8" href="Builtin_QueryService_CreateTestTable.html" data-ajax="false">Create test table t_emp</a></LI>
+					<LI><a charset="UTF-8" href="Sample_MultiInsert.html" data-ajax="false">Insert into test table t_emp with sample user-defined Service</a></LI>
+				</OL>
+				<br>
+				
+				<font size="4">Built-in services</font>
+				<UL>
+					<LI>QueryService
+						<OL>
+							<LI><a charset="UTF-8" href="Builtin_QueryService_SingleQuery.html" data-ajax="false">Execute a query once</a></LI>
+							<LI><a charset="UTF-8" href="Builtin_QueryService_MultiQuery.html" data-ajax="false">Execute two queries</a></LI>
+							<LI><a charset="UTF-8" href="Builtin_QueryService_TransactionQuery.html" data-ajax="false">Execute two queries in transaction</a></LI>
+						</OL>
+					</LI>
+					<P>
+					<LI>EchoService
+						<OL>
+							<LI><a charset="UTF-8" href="Sample_jsonp.html" data-ajax="false">Mobile AJAX JSONP</a></LI>
+						</OL>
+					</LI>
+				</UL>
+				<br>
+				
+				<font size="4">User-defined services</font>
+				<UL>
+					<LI>DB Query Service
+						<OL>
+							<LI><a charset="UTF-8" href="Sample_SingleQuery.html" data-ajax="false">Execute a query once</a></LI>
+							<LI><a charset="UTF-8" href="Sample_MultiQuery.html" data-ajax="false">Execute two queries</a></LI>
+							<LI><a charset="UTF-8" href="Sample_TransactionQuery.html" data-ajax="false">Execute two queries in transaction</a></LI>
+						</OL>
+					</LI>
+					<p>
+					<LI>Session Service
+						<OL>
+							<LI><a charset="UTF-8" href="Sample_SessionGet.html" data-ajax="false">Get data from Session</a></LI>
+							<LI><a charset="UTF-8" href="Sample_SessionSet.html" data-ajax="false">Set data in Session</a></LI>
+							<LI><a charset="UTF-8" href="Sample_SessionClean.html" data-ajax="false">Clean data in Session</a> - Note, after execution of this Log-in is required again</LI>
+						</OL>
+					</LI>
+					<p>
+					<LI>Miscellaneous
+						<OL>
+							<LI><a charset="UTF-8" href="Sample04_HandleReqRes.html" data-ajax="false">Handle request data and response data</a></LI>
+							<LI><a charset="UTF-8" href="Sample05_RespondInList.html" data-ajax="false">Respond in List Object</a></LI>
+							<LI><a charset="UTF-8" href="Sample06_RespondInMap.html" data-ajax="false">Respond in Map Object</a></LI>
+							<LI><a charset="UTF-8" href="Sample07_Exception.html" data-ajax="false">Handle Exception</a></LI>
+						</OL>
+					</LI>
+				</UL>
+			</div>
+		</div>
+	</div>
+</BODY>
+</html>

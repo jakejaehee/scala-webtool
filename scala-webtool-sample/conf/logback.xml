@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<include resource="includedConfig.xml"/>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%date{HH:mm:ss} %-5level %logger - %msg%n</pattern>
+		</encoder>
+	</appender>
+  
+	<appender name="APP" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>C:/logs/webtool/app.log</file>
+		<encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger - %msg%n</pattern>
+        </encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>C:/logs/webtool/app-%d{yyyy-MM-dd_HH_mm}.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+  
+	<appender name="SQL" class="ch.qos.logback.core.rolling.RollingFileAppender">
+	 	<param name="Append" value="false"/>
+		<file>C:/logs/webtool/sql/sql.log</file>
+		<encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level: %msg%n</pattern>
+        </encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>C:/logs/webtool/sql/sql-%d{yyyy-MM-dd_HH_mm}.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+  
+	<appender name="AKKA" class="ch.qos.logback.core.rolling.RollingFileAppender">
+	 	<param name="Append" value="false"/>
+		<file>C:/logs/webtool/akka/akka.log</file>
+		<encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level: %msg%n</pattern>
+        </encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>C:/logs/webtool/akka/akka-%d{yyyy-MM-dd_HH_mm}.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+	
+    <logger name="play" level="INFO" />
+	<logger name="application" level="DEBUG" />
+	<logger name="controllers" level="TRACE" />
+
+    <logger name="com.google" level="INFO" />
+    <logger name="com.zaxxer" level="INFO" />
+    <logger name="net.sf" level="INFO" />
+    <logger name="javax.management" level="INFO" />
+	
+	<!--
+	o logger: elastic.util.sqlmgr.SqlConn
+	   . INFO: brief for all queries
+	   . DEBUG: detailed for update, brief for select queries
+	   . TRACE: detailed for all queries
+	-->
+	<logger name="webtool.util.sqlrepo.SqlConn" level="TRACE" additivity="false">
+		<appender-ref ref="SQL" />
+	</logger>
+	
+	<!-- Set logging for all Akka library classes to INFO -->
+	<logger name="akka" level="INFO" additivity="false">
+		<appender-ref ref="AKKA" />
+	</logger>
+	
+	<!-- Set a specific actor to DEBUG -->
+	<logger name="actors" level="DEBUG" additivity="false">
+		<appender-ref ref="AKKA" />
+	</logger>
+    
+	<!-- 
+	<logger name="webtool" level="TRACE" />
+	 -->
+
+	<root level="TRACE">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="APP" />
+	</root>
+    
+</configuration>
